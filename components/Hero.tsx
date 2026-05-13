@@ -139,9 +139,8 @@ export default function Hero() {
     return () => ctx.revert()
   }, [])
 
-  /* En móvil siempre muestra la foto portrait (idx 1). En desktop alterna cada 4 s */
+  /* Alterna entre las dos fotos cada 4 s (arranca tras 2.5 s para dejar entrar la animación) */
   useEffect(() => {
-    if (window.innerWidth < 768) { setImgIdx(1); return }
     const timeout = setTimeout(() => {
       const interval = setInterval(() => setImgIdx(i => i === 0 ? 1 : 0), 4000)
       return () => clearInterval(interval)
@@ -241,7 +240,7 @@ export default function Hero() {
       {/* ── Foto jugador — sobre el nombre (z-10) ── */}
       <div
         ref={playerRef}
-        className="absolute bottom-0 left-1/2 -translate-x-1/2 z-10 pointer-events-none"
+        className="absolute bottom-0 left-1/2 -translate-x-1/2 z-10 pointer-events-none hero-player-wrap"
         style={{ height: 'clamp(420px, 95dvh, 1800px)', width: 'auto', maxWidth: '94vw' }}
       >
         {PLAYER_IMGS.map((img, i) => (
@@ -252,7 +251,7 @@ export default function Hero() {
             width={img.w}
             height={img.h}
             priority={i === 0}
-            className="absolute bottom-0 left-1/2 -translate-x-1/2"
+            className="absolute bottom-0 left-1/2 -translate-x-1/2 hero-player-img"
             style={{
               height:         '100%',
               width:          'auto',

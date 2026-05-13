@@ -101,7 +101,7 @@ function TeamPanel({ team, visible }: { team: (typeof TEAMS)[0]; visible: boolea
       style={{ opacity: visible ? 1 : 0 }}
       aria-hidden={!visible}
     >
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 h-full items-center px-5 md:px-10 max-w-7xl mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 h-full items-center px-5 md:px-10 max-w-7xl mx-auto pt-36 md:pt-0">
 
         {/* Texto */}
         <div className="flex flex-col gap-4">
