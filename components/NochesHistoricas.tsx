@@ -183,7 +183,7 @@ export default function NochesHistoricas() {
   return (
     <section id="copa">
       <div ref={containerRef} style={{ height: `${(TOTAL_VH + 1) * 100}vh` }}>
-        <div className="sticky top-0 min-h-[100dvh] bg-ink flex overflow-hidden">
+        <div className="sticky top-0 min-h-[100dvh] bg-ink flex flex-col md:flex-row overflow-hidden">
 
           {/* ── Fondo animado ── */}
           <div className="absolute inset-0 z-0 pointer-events-none" aria-hidden="true">
@@ -247,7 +247,7 @@ export default function NochesHistoricas() {
           </div>
 
           {/* ── Panel izquierdo: texto ── */}
-          <div className="relative z-20 w-full md:w-[44%] flex flex-col justify-center px-5 md:pl-20 lg:pl-28 md:pr-6 pt-28 pb-10 flex-shrink-0">
+          <div className="relative z-20 w-full md:w-[44%] flex flex-col justify-center px-5 md:pl-20 lg:pl-28 md:pr-6 pt-16 md:pt-28 pb-4 md:pb-10 flex-shrink-0">
 
             {/* Label */}
             <p
@@ -258,7 +258,7 @@ export default function NochesHistoricas() {
             </p>
 
             {/* Paneles de texto apilados */}
-            <div className="relative min-h-[340px]">
+            <div className="relative min-h-[200px] md:min-h-[340px]">
               {MOMENTS.map((moment, i) => (
                 <div
                   key={moment.id}
@@ -340,7 +340,7 @@ export default function NochesHistoricas() {
           </div>
 
           {/* ── Panel derecho: imagen a tamaño natural ── */}
-          <div className="hidden md:flex relative flex-1 items-center justify-center bg-[#05040d] overflow-hidden">
+          <div className="flex flex-1 relative items-center justify-center bg-[#05040d] overflow-hidden min-h-[38dvh] md:min-h-0">
 
             {/* Blend suave en el borde izquierdo */}
             <div

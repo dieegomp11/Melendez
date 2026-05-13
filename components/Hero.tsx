@@ -139,8 +139,9 @@ export default function Hero() {
     return () => ctx.revert()
   }, [])
 
-  /* Alterna entre las dos fotos cada 4 s (arranca tras 2.5 s para dejar entrar la animación) */
+  /* En móvil siempre muestra la foto portrait (idx 1). En desktop alterna cada 4 s */
   useEffect(() => {
+    if (window.innerWidth < 768) { setImgIdx(1); return }
     const timeout = setTimeout(() => {
       const interval = setInterval(() => setImgIdx(i => i === 0 ? 1 : 0), 4000)
       return () => clearInterval(interval)
@@ -253,11 +254,14 @@ export default function Hero() {
             priority={i === 0}
             className="absolute bottom-0 left-1/2 -translate-x-1/2"
             style={{
-              height:     '100%',
-              width:      'auto',
-              filter:     'drop-shadow(0 0 80px rgba(201,168,76,0.12))',
-              opacity:    i === imgIdx ? 1 : 0,
-              transition: 'opacity 0.9s ease',
+              height:         '100%',
+              width:          'auto',
+              maxWidth:       '94vw',
+              objectFit:      'contain',
+              objectPosition: 'bottom center',
+              filter:         'drop-shadow(0 0 80px rgba(201,168,76,0.12))',
+              opacity:        i === imgIdx ? 1 : 0,
+              transition:     'opacity 0.9s ease',
             }}
           />
         ))}

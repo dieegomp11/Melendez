@@ -244,7 +244,7 @@ export default function Timeline() {
           </div>
 
           {/* Label */}
-          <div className="absolute top-24 left-5 md:left-10 z-30 pointer-events-none">
+          <div className="absolute top-24 left-5 md:left-10 z-30 pointer-events-none hidden md:block">
             <p className="font-mono text-[0.5rem] tracking-[0.32em] uppercase" style={{ color: 'var(--accent)' }}>
               Trayectoria
             </p>
