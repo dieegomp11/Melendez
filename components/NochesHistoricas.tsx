@@ -1,6 +1,8 @@
 'use client'
 import React, { useEffect, useRef, useState } from 'react'
 
+const BASE = process.env.NEXT_PUBLIC_BASE_PATH || ''
+
 interface Moment {
   id: string
   title: string
@@ -284,7 +286,7 @@ export default function NochesHistoricas() {
                   <div className="flex items-center gap-3 mb-2">
                     <div className="w-8 h-8 flex-shrink-0 flex items-center justify-center">
                       {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img src={moment.homeShield} alt={moment.homeTeam} className="w-full h-full object-contain" />
+                      <img src={BASE + moment.homeShield} alt={moment.homeTeam} className="w-full h-full object-contain" />
                     </div>
                     <span
                       className="font-display leading-none tabular-nums"
@@ -294,7 +296,7 @@ export default function NochesHistoricas() {
                     </span>
                     <div className="w-8 h-8 flex-shrink-0 flex items-center justify-center">
                       {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img src={moment.awayShield} alt={moment.awayTeam} className="w-full h-full object-contain" />
+                      <img src={BASE + moment.awayShield} alt={moment.awayTeam} className="w-full h-full object-contain" />
                     </div>
                   </div>
 
@@ -365,7 +367,7 @@ export default function NochesHistoricas() {
                   >
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
-                      src={src}
+                      src={BASE + src}
                       alt=""
                       style={{
                         maxWidth: '100%',

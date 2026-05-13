@@ -5,7 +5,7 @@ const NAV = [
   { label: 'Perfil', href: '#perfil' },
   { label: 'Stats', href: '#stats' },
   { label: 'Trayectoria', href: '#trayectoria' },
-  { label: 'Highlights', href: '#highlights' },
+  { label: 'Highlights', href: '#copa' },
 ]
 
 export default function Footer() {
@@ -55,11 +55,27 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="border-t border-white/[0.05] pt-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
           <span className="font-mono text-[0.44rem] tracking-[0.2em] uppercase text-white/20">
-            Temporada 2024/25 · Todos los derechos reservados
+            Temporada 2025/26 · © 2026 Ale Melendez
           </span>
-          <span className="font-mono text-[0.44rem] tracking-[0.2em] uppercase text-white/20">
-            © 2025 Ale Melendez
-          </span>
+          <a
+            href="https://fluentiatech.es"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-1.5 opacity-30 hover:opacity-70 transition-opacity duration-300"
+          >
+            <span className="font-mono text-[0.44rem] tracking-[0.2em] uppercase text-white">
+              CRAFTED WITH
+            </span>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/fluentia_clean.png`}
+              alt="Fluentia"
+              style={{ height: '14px', width: 'auto', filter: 'brightness(0) invert(1)' }}
+            />
+            <span className="font-mono text-[0.44rem] tracking-[0.2em] uppercase text-white">
+              PRECISION
+            </span>
+          </a>
         </div>
       </div>
     </footer>

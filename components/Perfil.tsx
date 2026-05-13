@@ -78,7 +78,7 @@ function HighlightsPlayer() {
     >
       <video
         ref={videoRef}
-        src="/highlights_web.mp4"
+        src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/highlights_web.mp4`}
         className="w-full h-full object-cover"
         preload="metadata"
         playsInline

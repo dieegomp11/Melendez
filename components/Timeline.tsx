@@ -41,6 +41,8 @@ function GoalCounter({ target, accent }: { target: number; accent: string }) {
 }
 
 /* ── Imagen con hueco placeholder ── */
+const BASE = process.env.NEXT_PUBLIC_BASE_PATH || ''
+
 function TeamImage({ src, alt, position }: { src: string; alt: string; position: string }) {
   if (!src) {
     return (
@@ -66,7 +68,7 @@ function TeamImage({ src, alt, position }: { src: string; alt: string; position:
     <div className="relative overflow-hidden rounded-lg md:aspect-[3/4]">
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
-        src={src}
+        src={BASE + src}
         alt={alt}
         className="absolute inset-0 w-full h-full object-cover"
         style={{ objectPosition: position }}
@@ -110,7 +112,7 @@ function TeamPanel({ team, visible }: { team: (typeof TEAMS)[0]; visible: boolea
             {team.period} · {team.seasons}
           </p>
 
-          <h3 className="font-display text-3xl md:text-5xl text-white leading-tight tracking-tight">
+          <h3 className="font-display text-2xl sm:text-3xl md:text-5xl text-white leading-tight tracking-tight">
             {team.name}
           </h3>
 
@@ -269,7 +271,7 @@ export default function Timeline() {
                     }}
                   />
                   <span
-                    className="font-mono text-[0.44rem] tracking-[0.18em] uppercase transition-colors duration-300 hidden sm:block"
+                    className="font-mono text-[0.38rem] sm:text-[0.44rem] tracking-[0.14em] sm:tracking-[0.18em] uppercase transition-colors duration-300"
                     style={{ color: i === activeIdx ? team.timelineColor : 'rgba(255,255,255,0.28)' }}
                   >
                     {team.shortName}

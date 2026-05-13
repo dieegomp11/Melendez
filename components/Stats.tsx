@@ -5,7 +5,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 /* ── Left: 2 filas × 3 columnas ── */
 const LEFT_STATS = [
-  { value: '37', label: 'Partidos', sub: 'temporada 24/25' },
+  { value: '37', label: 'Partidos', sub: 'temporada 25/26' },
   { value: '82.5%', label: 'Pases completados', sub: 'precisión media' },
   { value: '6.76', label: 'Recuperaciones', sub: 'por 90 min' },
   { value: '3.15', label: 'Pases largos prec.', sub: 'por 90 min' },
@@ -183,7 +183,7 @@ export default function Stats() {
               <div className="stat-img relative overflow-hidden rounded aspect-[3/4]">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src="/Stats/AleStats1.jpg"
+                  src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/Stats/AleStats1.jpg`}
                   alt=""
                   className="absolute inset-0 w-full h-full object-cover"
                   style={{ filter: 'grayscale(100%) contrast(1.05)', objectPosition: '50% 20%' }}
@@ -192,7 +192,7 @@ export default function Stats() {
               <div className="stat-img relative overflow-hidden rounded aspect-square self-end">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src="/Stats/AleStats2.jpg"
+                  src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/Stats/AleStats2.jpg`}
                   alt=""
                   className="absolute inset-0 w-full h-full object-cover"
                   style={{ filter: 'grayscale(100%) contrast(1.05)', objectPosition: '50% 30%' }}
