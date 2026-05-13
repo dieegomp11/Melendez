@@ -1,0 +1,113 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── CSS Variables ──────────────────────────────────────────────── */
+:root {
+  --accent:     #C9A84C;
+  --accent-rgb: 201, 168, 76;
+}
+
+/* ── Base ───────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: #070610;
+  color: #f0edff;
+  font-family: var(--font-outfit), Outfit, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* ── Accent dynamic ─────────────────────────────────────────────── */
+.accent-color  { color: var(--accent); }
+.accent-bg     { background-color: var(--accent); }
+.accent-border { border-color: var(--accent); }
+
+/* ── Film grain ─────────────────────────────────────────────────── */
+.film-grain {
+  position: relative;
+}
+.film-grain::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)' opacity='0.045'/%3E%3C/svg%3E");
+  background-size: 220px 220px;
+  pointer-events: none;
+  opacity: 0.5;
+  mix-blend-mode: overlay;
+  z-index: 1;
+}
+
+/* ── Keyframes ──────────────────────────────────────────────────── */
+@keyframes navSlideDown {
+  from { opacity: 0; transform: translateY(-16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes auroraFloat {
+  0%   { transform: translate(0%, 0%)    scale(1);    }
+  33%  { transform: translate(4%, 3%)    scale(1.06); }
+  66%  { transform: translate(-3%, 2%)   scale(0.96); }
+  100% { transform: translate(0%, 0%)    scale(1);    }
+}
+
+@keyframes auroraFloat2 {
+  0%   { transform: translate(0%, 0%)    scale(1);    }
+  40%  { transform: translate(-5%, -2%)  scale(1.08); }
+  80%  { transform: translate(3%, -4%)   scale(0.94); }
+  100% { transform: translate(0%, 0%)    scale(1);    }
+}
+
+@keyframes nochesFloat {
+  0%   { transform: translate(0%,  0%)   scale(1);    }
+  35%  { transform: translate(5%,  4%)   scale(1.07); }
+  70%  { transform: translate(-3%, 6%)   scale(0.95); }
+  100% { transform: translate(0%,  0%)   scale(1);    }
+}
+
+@keyframes nochesFloat2 {
+  0%   { transform: translate(0%,  0%)   scale(1);    }
+  40%  { transform: translate(-6%, -3%)  scale(1.05); }
+  75%  { transform: translate(4%, -5%)   scale(0.97); }
+  100% { transform: translate(0%,  0%)   scale(1);    }
+}
+
+@keyframes accentPulse {
+  0%, 100% { opacity: 0.55; }
+  50%       { opacity: 1; }
+}
+
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
+
+@keyframes floatY {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-10px); }
+}
+
+/* ── Navbar pill ────────────────────────────────────────────────── */
+.nav-pill {
+  animation: navSlideDown 0.7s cubic-bezier(0.16, 1, 0.3, 1) 1.4s both;
+}
+
+/* ── Accent line cta ────────────────────────────────────────────── */
+.cta-line {
+  display: inline-block;
+  height: 1.5px;
+  width: 32px;
+  background: var(--accent);
+  transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.cta-wrap:hover .cta-line { width: 56px; }
+
+/* ── Scrollbar ──────────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: #070610; }
+::-webkit-scrollbar-thumb { background: #C9A84C44; border-radius: 2px; }

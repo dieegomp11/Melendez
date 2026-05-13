@@ -1,0 +1,11 @@
+node_modules/
+.next/
+out/
+.env*
+*.log
+
+# Vídeos originales pesados (>50 MB)
+public/Asis*.mp4
+public/Gol*.mp4
+public/Jugada*.mp4
+public/highlights.mp4
